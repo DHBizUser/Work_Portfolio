@@ -102,3 +102,14 @@ select SourceDate from _2db.WrangleDates where DataSourceName is 'MB52')
 
 
 -- for CM01, we want to analyze changes to the production plan as they occur to determine FIFO-derived "path changes" at key intervals.  Such path changes carry Ownership implications in a Make-to-Order environment.  They represent the business decisions we enact on the production schedule so that the operation supports the business.
+
+
+create table CM01combined as
+select '_1db' as WrangleSourceName,*
+from _1db.CM01plan cross join (
+select SourceDate from _1db.WrangleDates where DataSourceName is 'CM01')
+union all
+select '_2db' as WrangleSourceName,*
+from _2db.CM01plan cross join (
+select SourceDate from _2db.WrangleDates where DataSourceName is 'CM01')
+;
