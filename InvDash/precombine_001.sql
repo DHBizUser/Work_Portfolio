@@ -14,20 +14,44 @@ Pre-combined output its itself a low-level report that analyses wrangled content
 .cd "d:/home/RM06analyst/InvDash2.0/ProcessedDB"
 
 
--- .open "./precombine01.db"
+-- .open "./precombine001.db"
 
-attach database "./wrangle01_20250306.db" AS CurrentData;
+attach database "./wrangle01_20250225.db" AS CurrentData;
 
 
 -- make a table of all the wrangle instances you are combining, distinguishing them with a name and date. This should describe the relationship each component instance has to the combined output.
 
+create table if not exists CombinerParams (WrangleSourceName,FilePath,WrangleDate);
 update CombinerParams set WrangleSourceName = 'PastData';
 
 insert into CombinerParams values
-       ('CurrentData','wrangle01_20250305.db','2025-03-06');
+       ('CurrentData','wrangle01_20250225.db','2025-02-25');
 
 -- for MB51, combine wrangle instances by stacking the data crossed with the date, then group by the unique key at the most recent date to remove duplicates.  MB51 is just a running ledger that can be pulled from SAP at any time by specifying the date range. However, this combination step saves us from having to pull the same data over and over again.
 
+
+CREATE TABLE if not exists MB51combined(
+  LastWrangle,
+  Material,
+  PurchOrd,
+  itm,
+  mtrldesc,
+  expiry,
+  mvt,
+  mtrldoc,
+  mvtText,
+  batch,
+  quantity,
+  LCamount,
+  baseunit,
+  postingdate,
+  UserName,
+  ReferenceText,
+  DocHeaderText,
+  ProcessOrder,
+  Vendor,
+  SourceDate
+);
 
 insert into MB51combined
 select MAX(SourceDate) as LastWrangle, * from
@@ -42,6 +66,29 @@ order by material,postingdate desc;
 -- for MB52, we want to compare inventory balances at key intervals. We specify past data from current.
 
 
+CREATE TABLE if not exists MB52combined(
+  WrangleSourceName,
+  Material,
+  MtrlDesc,
+  MtrlGrp,
+  SLoc,
+  MType,
+  Batch,
+  SDdoc,
+  BaseUnit,
+  UnrestrictedStock,
+  RestrictedStock,
+  QualityInspectionStock,
+  BlockedStock,
+  ReturnsStock,
+  UnrestrictedValue,
+  QualityInspectionValue,
+  RestrictedValue,
+  ReturnsValue,
+  BlockedValue,
+  SourceDate
+);
+
 update MB52combined set WrangleSourceName = 'PastData';
 
 insert into MB52combined
@@ -51,10 +98,32 @@ select SourceDate from CurrentData.WrangleDates where DataSourceName is 'MB52')
 ;
  
 
+CREATE TABLE IF NOT EXISTS CM01combined(
+  WrangleSourceName,
+  rowid INT,
+  WorkCenter,
+  Material,
+  PeggedRqmt,
+  RqmtTypeRank,
+  RqmtType,
+  RqmtQty,
+  RqmtUnit,
+  SchedLatestStart,
+  SchedLatestFinish,
+  SAPDuration,
+  DurUnit,
+  SourceDate
+);
 
 
 
+update CM01combined set WrangleSourceName = 'PastData';
 
+insert into CM01combined
+select 'CurrentData' as WrangleSourceName,* 
+from CurrentData.CM01plan cross join (
+select SourceDate from CurrentData.WrangleDates where DataSourceName is 'CM01')
+;
 
 
 
@@ -110,7 +179,32 @@ where ReturnsStock*1.0 > 0.0
 -- We purposefully use a file extention that will NOT open up Excel when double-clicked from the file explorer.
 -- Excel Report-Artifacts will source the data file using Power Query.
 
+
+-- inventory balance over time
+
 .mode tabs
 .headers on
 .once "InvBalanceBarChart.dat"
 select * from InventoryBatchQuantities;
+
+
+
+
+-- production plan over time
+
+.mode tabs
+.headers on
+.once "CM01planBarChart.dat"
+select * from CM01combined;
+
+
+
+
+-- MB51 movements monitor
+
+.mode tabs
+.headers on
+.once "MB51mvtBarChart.dat"
+select * from MB51combined;
+
+

@@ -25,7 +25,7 @@ data is NOT TOUCHED by MS Excel prior to import. I save it with txt extension to
 
 -- Its easier to manage when we have all the data in the same folder and start there.
 
-.cd "d:/home/RM06analyst/InvDash2.0/UnprocessedData/DataFolder_20250305"
+.cd "d:/home/RM06analyst/InvDash2.0/DataFolder_old"
 
 
 -- import into an existing empty table that IDs a name and the fixes the number of columns. Set the mode for tab separated text so it aligns the columns.
@@ -33,20 +33,20 @@ data is NOT TOUCHED by MS Excel prior to import. I save it with txt extension to
 
 CREATE  TABLE CM01import (_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19,_20,_21,_22,_23);
 .mode tabs
-.import "./CM01_s.txt" CM01import
+.import "./CM01_20250211.txt" CM01import
 
 
 create table MB51import (_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19,_20,_21,_22);
 .mode tabs
-.import "./MB51_s.txt" MB51import
+.import "./mb51_all_20250129.txt" MB51import
 
 create table MB52import (_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19,_20,_21,_22);
 .mode tabs
-.import "./MB52_s.txt" MB52import
+.import "./mb52_20250211.txt" MB52import
 
-create table ZOTIFimport (_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19,_20);
+create table ZOTIFimport (_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19);
 .mode tabs
-.import "./ZOTIF_s.txt" ZOTIFimport
+.import "./ZOTIF_20250131.txt" ZOTIFimport
 
 
 
@@ -62,10 +62,10 @@ create table ZOTIFimport (_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16
 create table WrangleDates (DataSourceName,FilePath,SourceDate);
 insert into WrangleDates values
 
-       ('CM01','CM01_s.txt','2025-03-05'),
-       ('MB51','MB51_s.txt',(select substr(trim(_1),1,10) from MB51import limit 1)),
-       ('MB52','MB52_s.txt','2025-03-05'),
-       ('ZOTIF','ZOTIF_s.txt',(select substr(trim(_1),1,10) from ZOTIFimport limit 1));
+       ('CM01','CM01_20250211.txt','2025-02-11'),
+       ('MB51','mb51_all_20250129.txt',(select substr(trim(_1),1,10) from MB51import limit 1)),
+       ('MB52','mb52_20250211.txt','2025-02-11'),
+       ('ZOTIF','ZOTIF_20250131.txt',(select substr(trim(_1),1,10) from ZOTIFimport limit 1));
 
 
 
@@ -108,7 +108,7 @@ trim(_9) as MType,
 trim(_10) as Batch,
 trim(_11) as SDdoc,
 trim(_12) as BaseUnit,
-replace(trim(_13),',','') as UnrestrictedStock,
+replace(trim(_13),',','') as UnrestritctedStock,
 replace(trim(_14),',','') as RestrictedStock,
 replace(trim(_15),',','') as QualityInspectionStock,
 replace(trim(_16),',','') as BlockedStock,
@@ -130,32 +130,29 @@ or trim(_9) is 'FERT')
 group by trim(_10);
 
 
-
--- the ZOTIF report pulled on 2025-02-24 had all lined indented one tab more than the ZOTIF pulled on 2025-01-31 -- all these columns needed to be adjusted
-
 create table ZOTIFsalesorders as select
-trim(_3) as ProfitCenter,
-trim(_4) as CustNo,
-trim(_5) as SOCreated,
-trim(_6) as SalesOrder,
-trim(_7) as SalesOrdItm,
-trim(_8) as Material,
-trim(_9) as description,
-trim(_10) as CustPOnum,
-trim(_11) as batch,
-replace(trim(_12),',','') as SalesOrderQty,
-replace(trim(_13),',','') as SOCurrentQty,
+trim(_2) as ProfitCenter,
+trim(_3) as CustNo,
+trim(_4) as SOCreated,
+trim(_5) as SalesOrder,
+trim(_6) as SalesOrdItm,
+trim(_7) as Material,
+trim(_8) as description,
+trim(_9) as CustPOnum,
+trim(_10) as batch,
+replace(trim(_11),',','') as SalesOrderQty,
+replace(trim(_12),',','') as SOCurrentQty,
 
-replace(trim(_14),',','')/replace(trim(_15),',','') as UnitPrice,
-trim(_16) as SaleableUnit,
-replace(trim(_17),',','') as NetValue,
-trim(_18) as OriginalSTAT,
-trim(_19) as CurrentSTAT,
-trim(_20) as FarevaPlannedDeliviry
+replace(trim(_13),',','')/replace(trim(_14),',','') as UnitPrice,
+trim(_15) as SaleableUnit,
+replace(trim(_16),',','') as NetValue,
+trim(_17) as OriginalSTAT,
+trim(_18) as CurrentSTAT,
+trim(_19) as FarevaPlannedDeliviry
 
 from ZOTIFimport
-where trim(_3) is not null
-and trim(_3) is not 'Profit Center';
+where trim(_2) is not null
+and trim(_2) is not 'Profit Center';
 
 
 
@@ -183,5 +180,10 @@ CREATE TABLE CM01plan AS
 		SUM(TRIM(_14)*1.0) AS SAPDuration,	
 		TRIM(_15) AS DurUnit
 	FROM CM01import WHERE _2 LIKE '____-__'
-	GROUP BY TRIM(_9) order by rowid asc
+	GROUP BY TRIM(_9)	
 ;
+
+
+
+
+
