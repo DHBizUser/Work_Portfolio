@@ -1,0 +1,14 @@
+Hello! Thanks for checking out my work.
+
+I've developed my business and data analysis practice during my time
+in various roles, as a survival skill of sorts. I currently work for a
+contract manufacturer of personal care and pharmaceutical products as
+a Supply Chain Analyst.  This repository showcases a few specific
+artifacts to share methods with other people doing similar things in
+personal, academic, or professional settings. It's all been a fairly
+autodidactic pursuit since I graduated university in 2015, so I invite
+opportunities to learn from others that come across this work. It is
+not intended to function as standalone software or to publish
+findings.  The data these artifacts are used with are not for public
+consumption.
+
