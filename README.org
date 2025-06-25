@@ -29,8 +29,9 @@ to fiddling with many copies of a MS Word document.  The graphics are
 designed myself using Inkscape and exported to pdf.
 
 
+
 /The contents of this repository are not intended to function as/
-/standalone software or to publish findings. I'm happy to answer/
+/standalone software nor to publish findings.  I'm happy to answer/
 /questions about how this code is used, however the data these/
 /artifacts are used with are not for public consumption./
 
