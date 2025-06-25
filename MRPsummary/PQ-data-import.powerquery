@@ -1,0 +1,20 @@
+// I use this bit of Power Query M code to import the data from the SQLite step off of a text file.  I have the SQL set up so it writes the current data to a text file, overwriting the last one.  I have the path to the text file in this Excel workbook in a cell, which is referenced by this code.
+
+// It makes this Excel report refreshable.  I fiddle with the SQL to point it to the current source so all I have to do is hit Data > Refresh in this sheet.
+
+
+
+let
+
+
+data_file = Excel.CurrentWorkbook(){[Name = "parm"]}[Content]{[attribute = "data_file"]}[value],
+
+
+
+
+
+    Source = Csv.Document(File.Contents(data_file),[Delimiter="	", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Cust", type text}, {"TopLvlMtrl", type text}, {"ComponentMtrl", type text}, {"RunOutDate", type date}, {"MTRLpath", type text}, {"DESCpath", type text}})
+in
+    #"Changed Type"

@@ -1,14 +1,36 @@
-Hello! Thanks for checking out my work.
+👋 Hello! 😁 Thanks for checking out my work.
 
-I've developed my business and data analysis practice during my time
-in various roles, as a survival skill of sorts. I currently work for a
-contract manufacturer of personal care and pharmaceutical products as
-a Supply Chain Analyst.  This repository showcases a few specific
-artifacts to share methods with other people doing similar things in
-personal, academic, or professional settings. It's all been a fairly
-autodidactic pursuit since I graduated university in 2015, so I invite
-opportunities to learn from others that come across this work. It is
-not intended to function as standalone software or to publish
-findings.  The data these artifacts are used with are not for public
-consumption.
+I practice business and data analysis in various roles personal and
+professional. I currently work for a contract manufacturer of personal
+care and pharmaceutical products as a Supply Chain Analyst.  This
+repository showcases a few specific artifacts to share methods with
+other people doing similar things in personal, academic, or
+professional settings. I am self-taught, and I invite opportunities to
+learn from others that come across this work.
+
+*BOMreportConvPaths* -- For those familiar with SAP inventory system,
+this is my home grown solution to CS15 for multiple materials.  It
+takes a flat list of parent-component pairs off of a set of Bills of
+Materials and evaluates all the possible complete usage paths. This is
+used for getting all the components associated with a customer or
+product group.
+
+
+*MRPsummary* -- This highlights current and upcoming inventory constraints
+by computing run out dates, pathwise by customer. I join Material
+Resource Planning data with context from BOMreportConvPaths and drop
+it into an Excel pivot table (not included here).
+
+
+*ResumeCV* -- This is everything needed to compile my resume PDF document from
+LaTeX source.  This is my working copy.  I make adjustments to the tex
+source and distribute variations of this.  I've found this preferable
+to fiddling with many copies of a MS Word document.  The graphics are
+designed myself using Inkscape and exported to pdf.
+
+
+/The contents of this repository are not intended to function as/
+/standalone software or to publish findings. I'm happy to answer/
+/questions about how this code is used, however the data these/
+/artifacts are used with are not for public consumption./
 
