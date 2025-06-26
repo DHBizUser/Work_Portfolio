@@ -1,0 +1,97 @@
+
+// I had a version of MRPsummary that leveraged DAX measures in an OLAP pivot table in Excel.
+
+// SAP prints out a big report from transaction MDLD.  I use Power Query to parse the text into a material headers and body and dump it to a power pivot data model with few other manually maintained context tables.
+
+// the below are part of said model in their own table "_measures"
+
+
+
+DeltaNOincoming:=CALCULATE(SUM(MDLDbody[RecptReqmts]),
+	MDLDbody[MRPElement]="SafetyStk" ||	
+	MDLDbody[MRPElement]="Order.res." || 
+	MDLDbody[MRPElement]="Depend.req" ||		
+	MDLDbody[MRPElement]="Plan.order" ||		
+	MDLDbody[MRPElement]="Order" ||		
+	MDLDbody[MRPElement]="FOC del."	)
+
+
+MRPdelta:=CALCULATE(SUM(MDLDbody[RecptReqmts]),
+	MDLDbody[MRPElement]="SafetyStk" ||
+	MDLDbody[MRPElement]="Order.res." ||
+	MDLDbody[MRPElement]="Purch.ord." || 
+	MDLDbody[MRPElement]="PurRequist" ||		
+	MDLDbody[MRPElement]="Depend.req" ||		
+	MDLDbody[MRPElement]="Plan.order" ||		
+	MDLDbody[MRPElement]="Order" ||		
+	MDLDbody[MRPElement]="FOC del."	)
+
+
+FirmPOincoming:=CALCULATE(SUM(MDLDbody[RecptReqmts]), MDLDbody[MRPElement]="Purch.ord.")
+
+
+
+StockWHorQI:=CALCULATE(SUM(MDLDbody[RecptReqmts]), ALL(DateTable),MDLDbody[MRPElement]="QM InspLot")
+	+	CALCULATE(SUM(MDLDbody[AvailQty]), ALL(DateTable),MDLDbody[MRPElement]="Plant Stck")
+
+
+
+
+CumulativeMRPDelta:=CALCULATE([MRPDelta],FILTER(ALL(DateTable),DateTable[Date] <=  MAX(DateTable[Date])))
+
+
+
+CalcAvailMRP:=[StockWHorQI] + [CumulativeMRPDelta]
+
+
+
+CalcAvailTL:=IF(	[CalcAvailMRP] < 0 , -1,
+	IF([CalcAvailNoIncoming]<0,0,1)	)
+
+
+
+FirmPOInd:=IF(	[FirmPOincoming]+0 > 0,1,0	)
+
+
+
+CumulativeDeltaNoIncoming:=CALCULATE([DeltaNOincoming]+0,FILTER(ALL(DateTable),DateTable[Date] <=  MAX(DateTable[Date])))
+
+
+
+CalcAvailNoIncoming:=[StockWHorQI] + ([CumulativeDeltaNoIncoming] +0)
+
+
+
+StockWHorQI_VALUE:=CALCULATE(SUM(MDLDbody[ImpactVal]), ALL(DateTable),MDLDbody[MRPElement]="QM InspLot")
+	+	CALCULATE(SUMX(MDLDbody,[AvailQty]*[UnitPrice]), ALL(DateTable),MDLDbody[MRPElement]="Plant Stck")
+
+
+
+
+MRPDelta_VALUE:=CALCULATE(SUM(MDLDbody[ImpactVal]),
+	MDLDbody[MRPElement]="SafetyStk" ||
+	MDLDbody[MRPElement]="Order.res." ||
+	MDLDbody[MRPElement]="Purch.ord." || 
+	MDLDbody[MRPElement]="PurRequist" ||		
+	MDLDbody[MRPElement]="Depend.req" ||		
+	MDLDbody[MRPElement]="Plan.order" ||		
+	MDLDbody[MRPElement]="Order" ||		
+	MDLDbody[MRPElement]="FOC del."	)
+
+
+
+
+CumulativeMRPDelta_VALUE:=CALCULATE([MRPDelta_VALUE],FILTER(ALL(DateTable),DateTable[Date] <=  MAX(DateTable[Date])))
+
+
+
+
+CalcAvailMRP_VALUE:=[StockWHorQI_VALUE] + [CumulativeMRPDelta_VALUE]
+
+
+
+
+MRPIncAll:=CALCULATE(SUM(MDLDbody[RecptReqmts]),
+	MDLDbody[MRPElement]="Purch.ord." || 
+	MDLDbody[MRPElement]="PurRequist" ||				
+	MDLDbody[MRPElement]="Plan.order" )

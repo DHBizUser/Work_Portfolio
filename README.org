@@ -8,10 +8,10 @@ things. I am self-taught, and I invite opportunities to learn from
 others that come across this work.
 
 *BOMreportConvPaths* -- Home grown solution to CS15 for multiple
-materials in an SAP inventory system.  It takes a flat list of
-parent-component pairs off of a set of Bills of Materials and
-evaluates all the possible complete usage paths. Useful for getting
-all the components associated with a customer or product group.
+materials in SAP.  It takes a flat list of parent-component pairs off
+of a set of Bills of Materials and evaluates all the possible complete
+usage paths. Useful for getting all the components associated with a
+customer or product group.
 
 
 *MRPsummary* -- Highlights current and upcoming inventory constraints
