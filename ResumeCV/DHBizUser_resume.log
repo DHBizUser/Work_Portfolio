@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.6.26)  26 JUN 2025 13:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.6.26)  26 JUN 2025 16:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1020,32 +1020,32 @@ LaTeX Warning: Unused global option(s):
 (DHBizUser_resume.aux)
 \openout1 = `DHBizUser_resume.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 456.
-LaTeX Font Info:    ... okay on input line 456.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 456.
-LaTeX Font Info:    ... okay on input line 456.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 456.
-LaTeX Font Info:    ... okay on input line 456.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 456.
-LaTeX Font Info:    ... okay on input line 456.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 456.
-LaTeX Font Info:    ... okay on input line 456.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 456.
-LaTeX Font Info:    ... okay on input line 456.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 456.
-LaTeX Font Info:    ... okay on input line 456.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 456.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 471.
+LaTeX Font Info:    ... okay on input line 471.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 471.
+LaTeX Font Info:    ... okay on input line 471.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 471.
+LaTeX Font Info:    ... okay on input line 471.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 471.
+LaTeX Font Info:    ... okay on input line 471.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 471.
+LaTeX Font Info:    ... okay on input line 471.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 471.
+LaTeX Font Info:    ... okay on input line 471.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 471.
+LaTeX Font Info:    ... okay on input line 471.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 471.
 LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 4
-56.
+71.
 
 (C:\Users\harrisdm\AppData\Local\Programs\MiKTeX\tex/latex/ly1\ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 456.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 456.
-LaTeX Font Info:    ... okay on input line 456.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 456.
-LaTeX Font Info:    ... okay on input line 456.
+LaTeX Font Info:    ... okay on input line 471.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 471.
+LaTeX Font Info:    ... okay on input line 471.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 471.
+LaTeX Font Info:    ... okay on input line 471.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1107,15 +1107,15 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 s.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 456.
+Package hyperref Info: Link coloring OFF on input line 471.
  (DHBizUser_resume.out) (DHBizUser_resume.out)
 \@outlinefile=\write4
 \openout4 = `DHBizUser_resume.out'.
 
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 467.
+(Font)              scaled to size 9.0pt on input line 482.
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
-nput line 467.
+nput line 482.
 
 (C:\Users\harrisdm\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontaw
 esomefree1.fd)
@@ -1124,7 +1124,7 @@ Package fontawesome5 Warning: The requested icon home has been replaced by the
 (fontawesome5)                solid version
 
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree2 on i
-nput line 467.
+nput line 482.
 
 (C:\Users\harrisdm\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontaw
 esomefree2.fd)
@@ -1133,280 +1133,280 @@ Package fontawesome5 Warning: The requested icon phone has been replaced by
 (fontawesome5)                the solid version
 
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/m/n' will be
-(Font)              scaled to size 29.86pt on input line 468.
+(Font)              scaled to size 29.86pt on input line 483.
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/b/n' will be
-(Font)              scaled to size 29.86pt on input line 468.
+(Font)              scaled to size 29.86pt on input line 483.
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/m/n' will be
-(Font)              scaled to size 20.74pt on input line 470.
+(Font)              scaled to size 20.74pt on input line 485.
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/m/sc' will be
-(Font)              scaled to size 20.74pt on input line 470.
+(Font)              scaled to size 20.74pt on input line 485.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 472.
+(Font)              <7> on input line 487.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 472.
+(Font)              <5> on input line 487.
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--476
+Underfull \hbox (badness 10000) in paragraph at lines 479--491
 
  []
 
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 484.
+(Font)              scaled to size 12.0pt on input line 499.
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 487.
+(Font)              scaled to size 12.0pt on input line 502.
 <img/hrule_cart.pdf, id=7, 483.69688pt x 43.85542pt>
 File: img/hrule_cart.pdf Graphic file (type pdf)
 <use img/hrule_cart.pdf>
-Package pdftex.def Info: img/hrule_cart.pdf  used on input line 493.
+Package pdftex.def Info: img/hrule_cart.pdf  used on input line 508.
 (pdftex.def)             Requested size: 510.30397pt x 46.26836pt.
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 499.
+(Font)              scaled to size 10.0pt on input line 514.
 
-Overfull \hbox (10.44441pt too wide) in paragraph at lines 500--500
+Overfull \hbox (10.44441pt too wide) in paragraph at lines 515--515
 \T1/Raleway-TLF/b/n/10 Communicate 
  []
 
 
-Overfull \hbox (3.86528pt too wide) in paragraph at lines 498--502
+Overfull \hbox (3.86528pt too wide) in paragraph at lines 513--517
 []  $[]$   $[]$   $[]$ 
  []
 
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree0 on i
-nput line 517.
+nput line 532.
 
 (C:\Users\harrisdm\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontaw
 esomefree0.fd)
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 524.
+(Font)              scaled to size 7.0pt on input line 539.
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 536.
+(Font)              scaled to size 10.0pt on input line 551.
 
-Overfull \hbox (5.10382pt too wide) in alignment at lines 531--538
+Overfull \hbox (5.10382pt too wide) in alignment at lines 546--553
 [][][] 
  []
 
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 541.
+(Font)              scaled to size 12.0pt on input line 556.
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/b/it' will be
-(Font)              scaled to size 12.0pt on input line 541.
+(Font)              scaled to size 12.0pt on input line 556.
 
-Overfull \hbox (191.07047pt too wide) in alignment at lines 605--605
+Overfull \hbox (191.07047pt too wide) in alignment at lines 620--620
 [][] 
  []
 
 <img/DBgraphic.pdf, id=9, 44.6193pt x 43.85542pt>
 File: img/DBgraphic.pdf Graphic file (type pdf)
 <use img/DBgraphic.pdf>
-Package pdftex.def Info: img/DBgraphic.pdf  used on input line 605.
+Package pdftex.def Info: img/DBgraphic.pdf  used on input line 620.
 (pdftex.def)             Requested size: 18.31377pt x 18.0pt.
 <img/chartgraphic.pdf, id=10, 41.77626pt x 41.4378pt>
 File: img/chartgraphic.pdf Graphic file (type pdf)
 <use img/chartgraphic.pdf>
-Package pdftex.def Info: img/chartgraphic.pdf  used on input line 605.
+Package pdftex.def Info: img/chartgraphic.pdf  used on input line 620.
 (pdftex.def)             Requested size: 18.14702pt x 18.0pt.
 
-Underfull \hbox (badness 10000) in alignment at lines 605--605
+Underfull \hbox (badness 10000) in alignment at lines 620--620
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 605--605
+Underfull \hbox (badness 10000) in alignment at lines 620--620
 [] 
  []
 
 
-Overfull \hbox (120.06883pt too wide) in paragraph at lines 605--605
+Overfull \hbox (120.06883pt too wide) in paragraph at lines 620--620
 []
  []
 
 
-Overfull \hbox (120.06883pt too wide) in paragraph at lines 605--605
+Overfull \hbox (120.06883pt too wide) in paragraph at lines 620--620
 []
  []
 
 
-Overfull \hbox (191.07047pt too wide) in alignment at lines 605--605
+Overfull \hbox (191.07047pt too wide) in alignment at lines 620--620
 [][] 
  []
 
 File: img/chartgraphic.pdf Graphic file (type pdf)
 <use img/chartgraphic.pdf>
-Package pdftex.def Info: img/chartgraphic.pdf  used on input line 605.
+Package pdftex.def Info: img/chartgraphic.pdf  used on input line 620.
 (pdftex.def)             Requested size: 18.14702pt x 18.0pt.
 <img/notebookgraphic.pdf, id=11, 44.73038pt x 41.4378pt>
 File: img/notebookgraphic.pdf Graphic file (type pdf)
 <use img/notebookgraphic.pdf>
-Package pdftex.def Info: img/notebookgraphic.pdf  used on input line 605.
+Package pdftex.def Info: img/notebookgraphic.pdf  used on input line 620.
 (pdftex.def)             Requested size: 19.43024pt x 18.0pt.
 
-Underfull \hbox (badness 10000) in alignment at lines 605--605
+Underfull \hbox (badness 10000) in alignment at lines 620--620
 [] 
  []
 
 
-Overfull \hbox (120.06883pt too wide) in paragraph at lines 605--605
+Overfull \hbox (120.06883pt too wide) in paragraph at lines 620--620
 []
  []
 
 
-Overfull \hbox (191.07047pt too wide) in alignment at lines 605--605
+Overfull \hbox (191.07047pt too wide) in alignment at lines 620--620
 [][] 
  []
 
 File: img/chartgraphic.pdf Graphic file (type pdf)
 <use img/chartgraphic.pdf>
-Package pdftex.def Info: img/chartgraphic.pdf  used on input line 605.
+Package pdftex.def Info: img/chartgraphic.pdf  used on input line 620.
 (pdftex.def)             Requested size: 18.14702pt x 18.0pt.
 File: img/notebookgraphic.pdf Graphic file (type pdf)
 <use img/notebookgraphic.pdf>
-Package pdftex.def Info: img/notebookgraphic.pdf  used on input line 605.
+Package pdftex.def Info: img/notebookgraphic.pdf  used on input line 620.
 (pdftex.def)             Requested size: 19.43024pt x 18.0pt.
 
-Underfull \hbox (badness 10000) in alignment at lines 605--605
+Underfull \hbox (badness 10000) in alignment at lines 620--620
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 605--605
+Underfull \hbox (badness 10000) in alignment at lines 620--620
 [] 
  []
 
 
-Overfull \hbox (120.06883pt too wide) in paragraph at lines 605--605
+Overfull \hbox (120.06883pt too wide) in paragraph at lines 620--620
 []
  []
 
 
-Overfull \hbox (120.06883pt too wide) in paragraph at lines 605--605
+Overfull \hbox (120.06883pt too wide) in paragraph at lines 620--620
 []
  []
 
 
-Overfull \hbox (191.07047pt too wide) in alignment at lines 605--605
+Overfull \hbox (191.07047pt too wide) in alignment at lines 620--620
 [][] 
  []
 
 File: img/chartgraphic.pdf Graphic file (type pdf)
 <use img/chartgraphic.pdf>
-Package pdftex.def Info: img/chartgraphic.pdf  used on input line 605.
+Package pdftex.def Info: img/chartgraphic.pdf  used on input line 620.
 (pdftex.def)             Requested size: 18.14702pt x 18.0pt.
 File: img/notebookgraphic.pdf Graphic file (type pdf)
 <use img/notebookgraphic.pdf>
-Package pdftex.def Info: img/notebookgraphic.pdf  used on input line 605.
+Package pdftex.def Info: img/notebookgraphic.pdf  used on input line 620.
 (pdftex.def)             Requested size: 19.43024pt x 18.0pt.
 
-Underfull \hbox (badness 10000) in alignment at lines 605--605
+Underfull \hbox (badness 10000) in alignment at lines 620--620
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 605--605
+Underfull \hbox (badness 10000) in alignment at lines 620--620
 [] 
  []
 
 
-Overfull \hbox (120.06883pt too wide) in paragraph at lines 605--605
+Overfull \hbox (120.06883pt too wide) in paragraph at lines 620--620
 []
  []
 
 
-Overfull \hbox (120.06883pt too wide) in paragraph at lines 605--605
+Overfull \hbox (120.06883pt too wide) in paragraph at lines 620--620
 []
  []
 
 
-Overfull \hbox (191.07047pt too wide) in alignment at lines 605--605
+Overfull \hbox (191.07047pt too wide) in alignment at lines 620--620
 [][] 
  []
 
 File: img/chartgraphic.pdf Graphic file (type pdf)
 <use img/chartgraphic.pdf>
-Package pdftex.def Info: img/chartgraphic.pdf  used on input line 605.
+Package pdftex.def Info: img/chartgraphic.pdf  used on input line 620.
 (pdftex.def)             Requested size: 18.14702pt x 18.0pt.
 File: img/notebookgraphic.pdf Graphic file (type pdf)
 <use img/notebookgraphic.pdf>
-Package pdftex.def Info: img/notebookgraphic.pdf  used on input line 605.
+Package pdftex.def Info: img/notebookgraphic.pdf  used on input line 620.
 (pdftex.def)             Requested size: 19.43024pt x 18.0pt.
 
-Underfull \hbox (badness 10000) in alignment at lines 605--605
+Underfull \hbox (badness 10000) in alignment at lines 620--620
 [] 
  []
 
 
-Overfull \hbox (120.06883pt too wide) in paragraph at lines 605--605
+Overfull \hbox (120.06883pt too wide) in paragraph at lines 620--620
 []
  []
 
 
-Overfull \hbox (191.07047pt too wide) in alignment at lines 605--605
+Overfull \hbox (191.07047pt too wide) in alignment at lines 620--620
 [][] 
  []
 
 File: img/notebookgraphic.pdf Graphic file (type pdf)
 <use img/notebookgraphic.pdf>
-Package pdftex.def Info: img/notebookgraphic.pdf  used on input line 605.
+Package pdftex.def Info: img/notebookgraphic.pdf  used on input line 620.
 (pdftex.def)             Requested size: 19.43024pt x 18.0pt.
 
-Underfull \hbox (badness 10000) in alignment at lines 605--605
+Underfull \hbox (badness 10000) in alignment at lines 620--620
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 605--605
+Underfull \hbox (badness 10000) in alignment at lines 620--620
 [] 
  []
 
 
-Overfull \hbox (120.06883pt too wide) in paragraph at lines 605--605
+Overfull \hbox (120.06883pt too wide) in paragraph at lines 620--620
 []
  []
 
 
-Overfull \hbox (120.06883pt too wide) in paragraph at lines 605--605
+Overfull \hbox (120.06883pt too wide) in paragraph at lines 620--620
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--612
+Underfull \hbox (badness 10000) in paragraph at lines 492--627
 
  []
 
 
-Overfull \hbox (191.07047pt too wide) in alignment at lines 652--652
+Overfull \hbox (191.07047pt too wide) in alignment at lines 667--667
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 652--652
+Underfull \hbox (badness 10000) in alignment at lines 667--667
 [][] 
  []
 
 
-Overfull \hbox (120.06883pt too wide) in paragraph at lines 652--652
+Overfull \hbox (120.06883pt too wide) in paragraph at lines 667--667
 [][]
  []
 
 
-Overfull \hbox (191.07047pt too wide) in alignment at lines 652--652
+Overfull \hbox (191.07047pt too wide) in alignment at lines 667--667
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 652--652
+Underfull \hbox (badness 10000) in alignment at lines 667--667
 [] 
  []
 
 
-Overfull \hbox (120.06883pt too wide) in paragraph at lines 652--652
+Overfull \hbox (120.06883pt too wide) in paragraph at lines 667--667
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 629--658
+Underfull \hbox (badness 10000) in paragraph at lines 644--673
 
  []
 
 LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on
- input line 687.
+ input line 702.
 
 (C:\Users\harrisdm\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontaw
 esomebrands0.fd)
@@ -1454,7 +1454,7 @@ Package rerunfilecheck Info: File `DHBizUser_resume.out' has not changed.
 Here is how much of TeX's memory you used:
  27036 strings out of 475814
  552026 string characters out of 5776829
- 1978960 words of memory out of 5000000
+ 1980960 words of memory out of 5000000
  49187 multiletter control sequences out of 15000+600000
  736889 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1470,7 +1470,7 @@ ata/Local/Programs/MiKTeX/fonts/type1/impallari/raleway/Raleway-Italic.pfb><C:/
 Users/harrisdm/AppData/Local/Programs/MiKTeX/fonts/type1/impallari/raleway/Rale
 way-Regular.pfb><C:/Users/harrisdm/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmsy10.pfb>
-Output written on DHBizUser_resume.pdf (1 page, 173470 bytes).
+Output written on DHBizUser_resume.pdf (1 page, 173785 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  2 named destinations out of 1000 (max. 500000)
