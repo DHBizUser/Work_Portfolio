@@ -1,37 +1,34 @@
 👋 Hello! 😁 Thanks for checking out my work.
 
-I practice business and data analysis in various roles personal and
-professional. I currently work for a contract manufacturer of personal
-care and pharmaceutical products as a Supply Chain Analyst.  This
-repository showcases a few specific artifacts to share methods with
-other people doing similar things in personal, academic, or
-professional settings. I am self-taught, and I invite opportunities to
-learn from others that come across this work.
+I practice business and data analysis in various settings. I currently
+work for a contract manufacturer of personal care and pharmaceutical
+products as a Supply Chain Analyst.  This repository showcases a few
+specific artifacts to share methods with other people doing similar
+things. I am self-taught, and I invite opportunities to learn from
+others that come across this work.
 
-*BOMreportConvPaths* -- For those familiar with SAP inventory system,
-this is my home grown solution to CS15 for multiple materials.  It
-takes a flat list of parent-component pairs off of a set of Bills of
-Materials and evaluates all the possible complete usage paths. This is
-used for getting all the components associated with a customer or
-product group.
+*BOMreportConvPaths* -- Home grown solution to CS15 for multiple
+materials in an SAP inventory system.  It takes a flat list of
+parent-component pairs off of a set of Bills of Materials and
+evaluates all the possible complete usage paths. Useful for getting
+all the components associated with a customer or product group.
 
 
-*MRPsummary* -- This highlights current and upcoming inventory constraints
+*MRPsummary* -- Highlights current and upcoming inventory constraints
 by computing run out dates, pathwise by customer. I join Material
 Resource Planning data with context from BOMreportConvPaths and drop
-it into an Excel pivot table (not included here).
+it into an Excel pivot table.
 
 
-*ResumeCV* -- This is everything needed to compile my resume PDF document from
-LaTeX source.  This is my working copy.  I make adjustments to the tex
+*ResumeCV* -- Everything needed to compile my resume PDF document from
+LaTeX source.  This is my working copy, I make adjustments to the tex
 source and distribute variations of this.  I've found this preferable
-to fiddling with many copies of a MS Word document.  The graphics are
-designed myself using Inkscape and exported to pdf.
+to fiddling with many copies of a MS Word document.  A variation of
+[[https://github.com/jankapunkt/latexcv][Jan Küster's work]].
 
 
 
 /The contents of this repository are not intended to function as/
-/standalone software nor to publish findings.  I'm happy to answer/
-/questions about how this code is used, however the data these/
+/standalone software nor to publish findings. The data these/
 /artifacts are used with are not for public consumption./
 
