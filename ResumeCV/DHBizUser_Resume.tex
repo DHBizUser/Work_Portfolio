@@ -1,0 +1,702 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2015 Jan Küster
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+
+%============================================================================%
+%
+%	DOCUMENT DEFINITION
+%
+%============================================================================%
+
+%we use article class because we want to fully customize the page and dont use a cv template
+\documentclass[10pt,A4]{article}	
+
+
+%----------------------------------------------------------------------------------------
+%	ENCODING
+%----------------------------------------------------------------------------------------
+
+%we use utf8 since we want to build from any machine
+\usepackage[utf8]{inputenc}		
+
+%----------------------------------------------------------------------------------------
+%	LOGIC
+%----------------------------------------------------------------------------------------
+
+% provides \isempty test
+\usepackage{xifthen}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% some tex-live fonts - choose your own
+
+%\usepackage[defaultsans]{droidsans}
+%\usepackage[default]{comfortaa}
+%\usepackage{cmbright}
+\usepackage[default]{raleway}
+%\usepackage{fetamont}
+%\usepackage[default]{gillius}
+%\usepackage[light,math]{iwona}
+%\usepackage[thin]{roboto} 
+
+% set font default
+\renewcommand*\familydefault{\sfdefault} 	
+\usepackage[T1]{fontenc}
+
+% more font size definitions
+\usepackage{moresize}		
+
+% icons
+\usepackage{fontawesome5}
+
+%----------------------------------------------------------------------------------------
+%	PAGE LAYOUT  DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+%debug page outer frames
+%\usepackage{showframe}			
+
+
+%define page styles using geometry
+\usepackage[a4paper]{geometry}		
+
+% for example, change the margins to 2 inches all round
+\geometry{top=.5cm, bottom=-.6cm, left=-0.1cm, right=0cm} 	
+
+%use customized header
+\usepackage{fancyhdr}				
+\pagestyle{fancy}
+
+%less space between header and content
+\setlength{\headheight}{-5pt}		
+
+
+%customize entries left, center and right
+\lhead{}
+\chead{}
+\rhead{}
+
+\newcommand{\padding}{1cm}
+\newcommand{\innerwidth}{\linewidth-\padding-\padding}
+
+%indentation is zero
+\setlength{\parindent}{0mm}
+
+%----------------------------------------------------------------------------------------
+%	TABLE /ARRAY DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for layouting tables
+\usepackage{multicol}			
+\usepackage{multirow}
+
+%extended aligning of tabular cells
+\usepackage{array}
+
+\newcolumntype{x}[1]{%
+>{\raggedleft\hspace{0pt}}p{#1}}%
+
+
+%----------------------------------------------------------------------------------------
+%	GRAPHICS DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for header image
+\usepackage{graphicx}
+
+%for floating figures
+\usepackage{wrapfig}
+\usepackage{float}
+%\floatstyle{boxed} 
+%\restylefloat{figure}
+
+%for drawing graphics		
+\usepackage{tikz}				
+\usetikzlibrary{shapes, backgrounds,mindmap, trees}
+\usepackage{hyperref}
+
+
+%----------------------------------------------------------------------------------------
+%	Color DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+\usepackage{transparent}
+\usepackage{color}
+
+%accent color
+\definecolor{sectcol}{RGB}{0,77,77}
+
+%dark background color <places and times> <bottom ribbons>
+% \definecolor{bgcol}{RGB}{80,80,80}
+
+%light background / accent color <hrules>
+\definecolor{softcol}{RGB}{200,200,200}
+
+% light bg
+% \definecolor{light}{RGB}{240, 240, 240}
+
+%============================================================================%
+%
+%
+%	DEFINITIONS
+%
+%
+%============================================================================%
+
+%----------------------------------------------------------------------------------------
+% 	HEADER
+%----------------------------------------------------------------------------------------
+
+% remove top header line
+\renewcommand{\headrulewidth}{0pt} 
+
+%remove botttom header line
+\renewcommand{\footrulewidth}{0pt}	  	
+
+%remove pagenum
+\renewcommand{\thepage}{}	
+
+%remove section num		
+\renewcommand{\thesection}{}			
+
+%----------------------------------------------------------------------------------------
+% 	ARROW GRAPHICS in Tikz
+%----------------------------------------------------------------------------------------
+
+% a six pointed arrow poiting to the left
+\newcommand{\tzlarrow}{(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;}	
+
+% include the left arrow into a tikz picture
+% param1: fill color
+%
+\newcommand{\larrow}[1]
+{\begin{tikzpicture}[scale=0.58]
+	 \filldraw[fill=#1!100,draw=#1!100!black]  \tzlarrow
+ \end{tikzpicture}
+}
+
+% a six pointed arrow poiting to the right
+\newcommand{\tzrarrow}{ (0,0.2) -- (0.1,0) -- (0.3,0) -- (0.2,0.2) -- (0.3,0.4) -- (0.1,0.4) -- cycle;}
+
+% include the right arrow into a tikz picture
+% param1: fill color
+%
+\newcommand{\rarrow}[1]
+{\begin{tikzpicture}[scale=0.58]
+	 \filldraw[fill=#1!100,draw=#1!100!black]  \tzrarrow
+ \end{tikzpicture}
+}
+
+
+
+%----------------------------------------------------------------------------------------
+%	custom sections
+%----------------------------------------------------------------------------------------
+
+% create a coloured box with arrow and title as cv section headline
+% param 1: section title
+%
+\newcommand{\cvsection}[1]
+{
+\colorbox{sectcol}{\mystrut \makebox[1\linewidth][l]{
+\larrow{bgcol} \hspace{-8pt} \larrow{bgcol} \hspace{-8pt} \larrow{bgcol} \textcolor{white}{\textbf{#1}}\hspace{4pt}
+}}\\
+}
+
+%create a coloured arrow with title as cv meta section section
+% param 1: meta section title
+%
+%\newcommand{\metasection}[2]
+%{
+%\begin{tabular*}{1\textwidth}{p{1.9cm} p{13cm}}
+%\larrow{bgcol}
+%\normalsize{\textcolor{sectcol}{#1}}&#2\\[8pt]
+%\end{tabular*}
+%}
+
+%----------------------------------------------------------------------------------------
+%	 CV EVENT
+%----------------------------------------------------------------------------------------
+
+% creates a stretched box as cv entry headline followed by 1 or 2 bullets about 
+% the work you did
+% param 1:	event time i.e. 2014 or 2011-2014 etc.
+% param 2:	event name (what did you do?)
+% param 3:	institution (where did you work / study)
+% param 4:	skill graphics
+% param 5:	bullet1
+% param 6:	bullet2
+
+
+\newcommand{\cveventnographic}[5]
+{
+\vspace{8pt}
+	\begin{tabular*}{0.6\linewidth}{ p{12cm} x{4cm}}
+\textbf{#2} \hspace{4pt} {#3}&\textit{#1}\\[4pt]
+	\end{tabular*}
+\vspace{-8pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+	\begin{tabular*}{1\textwidth}{l}
+		 \larrow{sectcol}  #4\\[4.5pt]
+		 \larrow{softcol}  #5\\[6pt]
+	\end{tabular*}
+\vspace{-3pt}
+}
+
+
+
+
+\newcommand{\cvevent}[5]
+{
+\vspace{8pt}
+	\begin{tabular*}{0.6\linewidth}{ p{12cm} x{4cm}}
+\textbf{#2} \hspace{4pt} {#3}&\textit{#1}\\[4pt]
+	\end{tabular*}
+\vspace{-8pt}
+\textcolor{softcol}{\hrule}
+\vspace{-2pt}
+\hspace{14.3cm}
+#4 \\[-18pt-6pt]
+\vspace{6pt}
+	\begin{tabular*}{1\textwidth}{l}
+	\vspace{-0.85cm} \larrow{sectcol} #5\\[4.5pt]
+	\end{tabular*}
+%\vspace{-6pt}
+}
+
+
+
+\newcommand{\cveventshort}[5]
+{
+\vspace{8pt}
+	\begin{tabular*}{0.6\linewidth}{ p{12cm} x{4cm}}
+\textbf{#2} \hspace{4pt} {#3}&\textit{#1}\\[4pt]
+	\end{tabular*}
+\vspace{-8pt}
+\textcolor{softcol}{\hrule}
+\vspace{-2pt}
+\hspace{14.3cm}
+#4 \\[-18pt-6pt]
+\vspace{6pt}
+	\begin{tabular*}{1\textwidth}{l}
+	\vspace{-0.85cm} \larrow{sectcol} #5\\[6pt]
+	\end{tabular*}
+\vspace{-3pt}
+}
+
+
+\newcommand{\cveventTcol}[5]
+{
+\vspace{8pt}
+	\begin{tabular*}{0.6\linewidth}{ p{12cm} x{4cm}}
+\textbf{#2} \hspace{4pt}{#3}&\textit{#1}\\[4pt]
+	\end{tabular*}
+\vspace{-8pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+	\begin{tabular*}{1\textwidth}{p{4cm} x{4cm}}
+		 \larrow{sectcol}#4 & \larrow{softcol}  #5\\[4.5pt]
+	\end{tabular*}
+}
+
+\newcommand{\cveventshortTcol}[5]
+{
+\vspace{8pt}
+	\begin{tabular*}{0.6\linewidth}{ p{12cm} x{4cm}}
+\textbf{#2} \hspace{4pt}{#3}&\textit{#1}\\[4pt]
+	\end{tabular*}
+\vspace{-8pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+	\begin{tabular*}{1\textwidth}{p{7cm} x{7cm}}
+		 \larrow{sectcol}  #4 &\larrow{softcol}  #5\\[6pt]
+	\end{tabular*}
+\vspace{-3pt}
+}
+
+
+
+
+
+
+
+
+%%\vspace{-3pt}
+%%}
+
+
+% additional 1 or 2 bullets for CV event 
+% param 1:
+% param 2:
+
+\newcommand{\oneextra}[1]
+{ \vspace{-0.85cm+24pt} \\
+\begin{tabular*}{1\textwidth}{l}
+		 \larrow{softcol}  #1\\[6pt]
+	\end{tabular*}
+\vspace{-3pt}
+}
+
+
+
+\newcommand{\twoextra}[2]
+{ \vspace{-0.85cm+24pt} \\
+\begin{tabular*}{1\textwidth}{l}
+		 \larrow{softcol}  #1\\[4.5pt]
+		 \larrow{softcol}  #2\\[6pt]
+	\end{tabular*}
+\vspace{-3pt}
+}
+
+
+\newcommand{\threeextra}[3]
+{ \vspace{-0.85cm+24pt} \\
+\begin{tabular*}{1\textwidth}{l}
+		 \larrow{softcol}  #1\\[4.5pt]
+		 \larrow{softcol}  #2\\[4.5pt]
+		 \larrow{softcol}  #3\\[6pt]
+	\end{tabular*}
+\vspace{-3pt}
+}
+
+
+
+\newcommand{\fourextra}[4]
+{ \vspace{-0.85cm+24pt} \\
+\begin{tabular*}{1\textwidth}{l}
+		 \larrow{softcol}  #1\\[4.5pt]
+		 \larrow{softcol}  #2\\[4.5pt]
+		 \larrow{softcol}  #3\\[4.5pt]
+		 \larrow{softcol}  #4\\[6pt]
+	\end{tabular*}
+\vspace{-3pt}
+}
+
+
+\newcommand{\fiveextra}[5]
+{ \vspace{-0.85cm+24pt} \\
+\begin{tabular*}{1\textwidth}{l}
+		 \larrow{softcol}  #1\\[4.5pt]
+		 \larrow{softcol}  #2\\[4.5pt]
+		 \larrow{softcol}  #3\\[4.5pt]
+		 \larrow{softcol}  #4\\[4.5pt]
+		 \larrow{softcol}  #5\\[6pt]
+	\end{tabular*}
+\vspace{-3pt}
+}
+
+
+
+
+
+
+
+%% \newcommand{\cveventextra}[6]
+%% {
+%% \vspace{8pt}
+%% 	\begin{tabular*}{0.6\linewidth}{ p{12cm} x{4cm}}
+%% \textbf{#2} \hspace{4pt}{#3}&\textit{#1}\\[4pt]
+%% 	\end{tabular*}
+%% \vspace{1pt}
+%% \textcolor{softcol}{\hrule}
+%% \vspace{6pt}
+%% 	\begin{tabular*}{1\textwidth}{l}
+%% 		 \larrow{sectcol}  #4\\[4.5pt]
+%% 		 \larrow{sectcol}  #5\\[4.5pt]
+%% 		 \larrow{sectcol}  #6\\[6pt]
+%% 	\end{tabular*}
+%% \vspace{-3pt}
+%% }
+
+
+%----------------------------------------------------------------------------------------
+% CUSTOM STRUT FOR EMPTY BOXES
+%----------------------------------------- -----------------------------------------------
+\newcommand{\mystrut}{\rule[-.3\baselineskip]{0pt}{\baselineskip}}
+
+%----------------------------------------------------------------------------------------
+% CUSTOM LOREM IPSUM
+%----------------------------------------------------------------------------------------
+\newcommand{\lorem}
+{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.}
+
+
+
+%============================================================================%
+%
+%
+%
+%	DOCUMENT CONTENT
+%
+%
+%
+%============================================================================%
+\begin{document}
+
+%use our custom fancy header definitions
+\pagestyle{fancy}	
+
+%----------------------------------------------------------------------------------------
+% HEADLINE / BASIC INFORMATION
+%----------------------------------------------------------------------------------------
+\begin{minipage}[c][0.085\textheight][t]{\linewidth}
+\begin{center}
+	\vspace{14pt}
+	\textcolor{black}{\small{\faIcon[regular]{home}  Richmond, VA  \hspace{12pt}  \faIcon[regular]{envelope}  \href{mailto:davidh804@gmail.com}{davidh804@gmail.com}  \hspace{12pt}  \faIcon[regular]{phone}   xxx-xxx-xxxx}} \\ \hspace{22pt}
+	\HUGE{\textcolor{black}{\textbf{David Harris}}}
+        \hspace{16pt}\textcolor{sectcol}{\rule[-1mm]{2pt}{0.9cm}}\hspace{12pt}
+	 \raisebox{2pt}{\huge{\textcolor{sectcol}{\textsc{Supply Chain Analyst}}}}
+\end{center}
+\end{minipage}\\[-4pt]
+%----------------------------------------------------------------------------------------
+% SUMMARY
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[c][0.09\textheight][t]{\linewidth}
+ \begin{center}
+\begin{minipage}[c][\textheight][t]{0.85\linewidth}
+ \textcolor{sectcol}{\hrule height 4pt \relax}
+ \vspace{4pt}
+ \textcolor{sectcol}{\hrule height .8pt \relax}
+\begin{center}
+	\large
+	\vspace{-5pt}
+	\larrow{softcol}\larrow{softcol} \textcolor{sectcol} {\textit
+	{I manage intelligence flows for timely purchasing decisions.}}
+	% -- Choose a headline appropriate for the position --chuggboarder
+	%{I supply critcal intelligence for timely decisions with concise reporting.}
+	\rarrow{softcol}\rarrow{softcol}
+	\vspace{-3pt}
+
+	 \includegraphics[width=1\linewidth]{img/hrule_cart}
+\end{center}
+	\normalsize
+	\vspace{-45pt}
+
+  	\hspace{98pt}
+	\parbox[c]{2cm}{\textbf{Extract \\ Transform \\  Load } } \hspace{101.5pt}
+	\parbox[c]{2cm}{\textbf{Analyze \\ Summarize \\ Communicate}}  \hspace{107pt}
+	\parbox[c]{3cm}{\textbf{Transact \\ Process \\ Document}}
+\end{minipage}
+\end{center}
+\end{minipage} \\[4pt]
+%----------------------------------------------------------------------------------------
+% META
+%----------------------------------------------------------------------------------------
+%1
+\begin{minipage}[c][0.1\textheight][t]{\linewidth}
+
+\begin{center}
+	\parbox[t]{7.5cm}{
+\hspace{4.3cm} \large{\faIcon{briefcase}} \normalsize
+\\ Procurement \hspace{2pt} $\cdot$ \hspace{2pt} Leadership \hspace{2pt} $\cdot$ \hspace{2pt} Manufacturing
+\\ Business Analytics  \hspace{2pt} $\cdot$ \hspace{2pt} Technical Service
+\\ Customer \& Vendor Relations \hspace{2pt} $\cdot$ \hspace{2pt} Data Handling
+	}
+\hspace{0.5cm}
+	\parbox[t]{7.5cm}{
+\hspace{2.5cm} \large{\faIcon{cogs}} \normalsize
+\\ Excel  \hspace{3pt} $\cdot$ \hspace{4pt}  Power Query  \hspace{4pt} $\cdot$ \hspace{4pt}  Office Suite
+\\ SAP   \hspace{4pt} $\cdot$ \hspace{4pt}  Syspro  \hspace{4pt} $\cdot$ \hspace{4pt} AS400  \hspace{4pt} $\cdot$ \hspace{4pt} DBWorks
+\\  Structured Query Language  \hspace{4pt}  $\cdot$ \hspace{4pt}  Git   \hspace{4pt} $\cdot$ \hspace{4pt}  \LaTeX{}
+	}
+
+%Crystal Reports
+        
+\vspace{4pt}
+
+
+\begin{tabular*}{0.76\linewidth}{ p{9.6cm} x{0.35cm} x{5cm}}
+\large{\hspace{4.05cm} \faIcon{certificate} \faIcon[regular]{bookmark}}& & \cr
+
+%Learning Python for Data Analysis and Visualization Ver 1 \hspace{3pt} &$\cdot$$\cdot$$\cdot$& \textit{Pierian Training} \cr
+%MBA in Excel- Master Business Analytics in Excel \hspace{3pt} & $\cdot$$\cdot$$\cdot$ & \textit{MyExcelAcademy .} \cr
+APICS Planning and Inventory Management course part 1 \hspace{3pt} &$\cdot$$\cdot$$\cdot$& \textit{Assoc. for Supply Chain Mgmt.} \cr
+Supervisor Management Training \hspace{3pt} &$\cdot$$\cdot$$\cdot$& \textit{Nan Ya Plastics Corp., America} \cr
+\end{tabular*}
+\\[12pt]
+\textbf{Projects \& Examples \hspace{28pt} \larrow{black}\larrow{black} \hspace{30pt}
+\href{https://github.com/DHBizUser/Work\_Portfolio}{\textcolor{sectcol}{\large{\textbf{\textit{https://github.com/DHBizUser/Work\_Portfolio}}}}}}
+\end{center} 
+\end{minipage}\\[20pt]
+%----------------------------------------------------------------------------------------
+% EXPERIENCE
+% 0.48 with the summary bar github link, 0.78 without
+%----------------------------------------------------------------------------------------
+%5
+\begin{minipage}[c][0.5\textheight][t]{\linewidth}
+\vspace{3.3cm}
+  \hspace{18.5cm}
+\textcolor{sectcol}{\rule[-3.4cm]{2pt}{7.2cm}}
+\hspace{12pt}
+\rotatebox[origin=t]{270}{\textcolor{sectcol}{\huge{\textsc{\hspace{4pt} Experience}}}}
+
+\vspace{-9.8cm}
+\hspace{26pt}
+\parbox[c]{0.8\linewidth}{
+%
+  \cvevent{Apr 2023 - present}{Supply Chain Analyst}{Fareva Richmond, Inc.  $\cdot$  Richmond, VA}
+   {\hspace{22.2222pt}\includegraphics[height=18pt]{img/DBgraphic} \hspace{2pt} \includegraphics[height=18pt]{img/chartgraphic}}
+{Maintained analysis pipelines and inventory reports}
+\threeextra{Another Point}{communicate insights to optimize conversion KPIs}{a cool thing to say}
+
+%\textcolor{softcol}{\hrule}
+
+%
+  \cveventshort{Jun 2022 - Apr 2023}{Buyer Planner II}{Fareva Richmond, Inc.  $\cdot$  Richmond, VA}
+{ \hspace{20.2222pt} \includegraphics[height=18pt]{img/chartgraphic} \hspace{2pt} \includegraphics[height=18pt]{img/notebookgraphic}}
+{Managed >100 critical process inputs and associated supplier relationships}
+%  \oneextra{produced Material scheduling reports for a team of 4 buyers}
+
+
+%\textcolor{softcol}{\hrule}
+
+%
+  \cvevent{Jan 2021 - Jun 2022}{Buyer}{Preco, Inc.  $\cdot$  Somerset, WI}
+{ \hspace{20.2222pt} \includegraphics[height=18pt]{img/chartgraphic} \hspace{2pt} \includegraphics[height=18pt]{img/notebookgraphic}}
+{Maintained inventory flows for 1500+ Managed Supplier Records and 200+ materials}
+  \twoextra{Laser technology document control}{Worked full time remote from Decenber 2021 on}
+
+%\textcolor{softcol}{\hrule}
+
+%
+  \cvevent{Aug 2016 - Mar 2020}{Supply Chain Manager}{Rockland Industries, Inc.  $\cdot$  Baltimore, MD}
+{ \hspace{20.2222pt} \includegraphics[height=18pt]{img/chartgraphic} \hspace{2pt} \includegraphics[height=18pt]{img/notebookgraphic}}
+{Met with Vendors, placed POs for critical process inputs}
+  \twoextra{Maintained availability reports and promotional categories for sales and marketing team}{Another point}
+
+%\textcolor{softcol}{\hrule}
+
+%
+  \cveventshort{Sep 2015 - Jul 2016}{Account Manager}{Nan Ya Plastics Corporation, America  $\cdot$  Lake City, SC}
+{ \hspace{20.2222pt} \includegraphics[height=18pt]{img/chartgraphic} \hspace{2pt} \includegraphics[height=18pt]{img/notebookgraphic}}
+{B2B outside sales accounts for PET resin, polyester fiber, and filament yarn plant}
+
+
+%\textcolor{softcol}{\hrule}
+
+%
+  \cvevent{Jun 2014 - Jun 2015}{Centralized Supplier Management Team Lead}{AT\&T  $\cdot$  Durham, NC}
+{ \hspace{45.2222pt}  \includegraphics[height=18pt]{img/notebookgraphic}}
+{Managed trunked communications network outage updates}
+  \oneextra{Coordinated between Access providers, Network Operations Centers, and customers}
+}
+
+%\hspace{16pt}
+%\textcolor{sectcol}{\rule[-6cm]{2pt}{7cm}}
+%\hspace{12pt}
+%\rotatebox[origin=t]{270}{\textcolor{sectcol}{\huge{\textsc{Experience}}}}
+\end{minipage} \\ [24pt]
+
+
+%----------------------------------------------------------------------------------------
+
+% SUMMARY
+%----------------------------------------------------------------------------------------
+%% \begin{minipage}[c][0.01\textheight][t]{\linewidth}
+%% \vspace{-10pt}
+%% \begin{center}
+%%   \fontsize{36pt}{\textcolor{sectcol}{$\cdot$  $\cdot$  $\cdot$}}
+%% \end{center}
+%% \end{minipage}\\[-2pt]
+%---------------------------------------------------------------------------------------
+
+% EDUCATION   
+%----------------------------------------------------------------------------------------
+\vspace{0.09cm}
+\begin{minipage}[c][0.15\textheight][t]{\linewidth}
+
+  \hspace{18.5cm}
+\textcolor{sectcol}{\rule[-1.5cm]{2pt}{4.1cm}}
+\hspace{12pt}
+\rotatebox[origin=t]{270}{\textcolor{sectcol}{\huge{\textsc{Education}}}}
+
+
+
+ \vspace{-4cm}
+\hspace{26pt}
+\parbox[c]{0.8\linewidth}{
+%\cvsection{Education}
+
+\cveventshortTcol{2015}{B.S. Textile Technology}{North Carolina State University  $\cdot$  Raleigh, NC}{Concentration: Supply Chain Operations}{Minor: Arts Entrepreneurship}
+
+%\textcolor{softcol}{\hrule}
+
+%
+\cveventnographic{2015}{Publication}{Journal of Arts Entrepreneurship Education}{The Aesthetic Value Exchange: A Potential Framework for the Arts Entrepreneurship Classroom}{\href{https://digitalcommons.memphis.edu/jaee/vol1/iss1/2/}{https://digitalcommons.memphis.edu/jaee/vol1/iss1/2/}}
+
+
+
+}
+%\hspace{16pt}
+%\textcolor{sectcol}{\rule[-1.65cm]{2pt}{12cm}}
+%\hspace{12pt}
+%\rotatebox[origin=c]{270}{\textcolor{sectcol}{\huge{\textsc{Education}}}}
+\end{minipage}\\[-4pt]
+
+
+
+
+
+%---------------------------------------------------------------------------------------
+%	QR CODE (optional)
+%----------------------------------------------------------------------------------------
+%\vspace{-136pt}
+%\hspace{0.75\linewidth}
+%\includegraphics[width=103pt]{qrcode}
+%\normalsize
+%\vspace{88pt}
+
+
+
+%-------------------------------------------------------------------------------------------------
+% FOOTER
+%--------------------------------------------------------------------------------------------------
+
+\begin{minipage}[c][0.01\textheight][t]{\linewidth}
+\vspace{-16pt}
+\begin{center}
+\parbox[b]{0.75\linewidth}{
+	\begin{center}
+          %
+	  \small{\faIcon[regular]{linkedin}  \href{https://www.linkedin.com/in/david-harris-4738a494}{https://www.linkedin.com/in/david-harris-4738a494}}
+%	\textcolor{white}{$\cdot$} \textcolor{white}{twitter.com/kuester\_jan}
+	\end{center}
+}
+\end{center}
+\end{minipage}
+
+
+
+%============================================================================%
+%
+%
+%
+%	DOCUMENT END
+%
+%
+%
+%============================================================================%
+\end{document}
