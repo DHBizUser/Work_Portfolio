@@ -1,4 +1,14 @@
-;; Thu Jun 26 19:52:19 2025 -- chuggpup --
+;; notes on my github workflow as it develops.
+;; I execute these from an emacs buffer, so as long as the system im accessing has Git & Emacs
+;; and I can get to my github portfolio to clone it -- I can work off this file.
+;; would also require a Latex engine to compile a PDF copy of my resume.
+
+
+;; 🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥🥥
+
+
+
+;; Thu Jun 26 19:52:19 2025 --
 ;; S-<insert>   ~/setxkbmap-setter
 ;; toggles the keyboard
 ;; this is the custom layout on CapsLock and the bottom row
@@ -24,12 +34,26 @@
 
 
 
-;(mkdir "~/Projects/Work_Portfolio")
+;; -- these are   🥥chuggpad🥥    linux 🐧 paths
 
+;(mkdir "~/Projects/Work_Portfolio")
 
 (cd "~/Projects/Work_Portfolio")
 
+
+
+;; -- these are   🪟 Windows   paths   🥥chuggportable
+
+
+(cd "~/Work_Portfolio")    ; "e:/home/Work_Portfolio/"
+
 (pwd)
+
+
+;; the SSH "remote" works on Linux; HTTP "remote" works on both Win and Linux. For reasons specific to my system(s)
+;; I call the remote "origin" from either local.
+
+(shell-command "git remote rename HTTPportfolio origin")
 
 
 
@@ -37,11 +61,12 @@
 
 (shell-command "git remote -v")
 
+
 (shell-command "git status")
 
 (shell-command "git restore --staged .")
 
-(shell-command "git commit -m \"CVadjust, gitignore\"")
+(shell-command "git commit -m \"elisp and CV\"")
 
 (shell-command "git push origin")
 
@@ -49,7 +74,7 @@
 
 
 (shell-command "git config --local user.name DHBizUser")
-(shell-command "git config --local user.email davidh804408@gmail.com")
+(shell-command "git config --local user.email dav******@gmail.com")   ;contact me through Linkedin please
 
 (shell-command "git commit --amend --reset-author -m \"fix author\"")
 
@@ -64,10 +89,15 @@
 
 ;; -- 🗎pdflatex on the CV --
 
-(cd "~/Projects/Work_Portfolio/ResumeCV")
-(shell-command "pdflatex t_BAresume.tex")
+(cd "ResumeCV")
+
+(shell-command "pdflatex t_BusinessAnalyst.tex")
 
 (shell-command "pdflatex DHBizUser_resume.tex")
+
+
+
+;; -- these are   🥥chuggpad🥥    linux 🐧 paths
 
 (pwd) "Directory /home/chuggboarder/Projects/Work_Portfolio/ResumeCV/"
 
