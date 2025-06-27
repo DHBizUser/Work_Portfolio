@@ -66,7 +66,7 @@
 
 (shell-command "git restore --staged .")
 
-(shell-command "git commit -m \"elisp and CV\"")
+(shell-command "git commit -m \"elisp\"")
 
 (shell-command "git push origin")
 
