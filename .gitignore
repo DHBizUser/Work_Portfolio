@@ -1,7 +1,17 @@
-# Ignore raw data files. "Raw data" in this
-# context is a time sensitive, externally reproducable slice, the transient
+# Ignore point-in-time artifacts
+# the time sensitive, externally reproducable slice, the transient
 # component of a "report". The date it was pulled is appended to the filename.
-# *_202?????.*
+# or its prefixed with t underscore
+
+t_*
+*_202?????.*
+
+
+# ignore excel files - keep from ballooning the repo
+*.xls
+*.xlsx
+*.xlsm
+*.xlsb
 
 # Ignore emacs temp files ('~' or '#' in the filename)
 *#*
@@ -15,4 +25,9 @@
 
 
 
-#test 2025-06-24
+# Ignore the metadata that comes out with pdflatex
+
+*.log
+*.out
+
+
