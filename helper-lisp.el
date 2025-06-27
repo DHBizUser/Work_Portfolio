@@ -24,10 +24,51 @@
 
 
 
-(mkdir "~/Projects/Work_Portfolio")
+;(mkdir "~/Projects/Work_Portfolio")
+
 
 (cd "~/Projects/Work_Portfolio")
 
 (pwd)
 
-(shell-command "git clone ssh://githubDHBizUserWork_Portfolio.git")
+
+
+(shell-command "git clone git@github.com:DHBizUser/Work_Portfolio.git")
+
+(shell-command "git remote -v")
+
+(shell-command "git status")
+
+(shell-command "git restore --staged .")
+
+(shell-command "git commit -m \"CVadjust, gitignore\"")
+
+(shell-command "git push origin")
+
+(shell-command "git add .")
+
+
+(shell-command "git config --local user.name DHBizUser")
+(shell-command "git config --local user.email davidh804408@gmail.com")
+
+(shell-command "git commit --amend --reset-author -m \"fix author\"")
+
+
+
+(browse-url "https://github.com/DHBizUser/Work_Portfolio")
+
+
+(shell-command "git rm --cached ResumeCV/DHBizUser_resume.aux")
+
+
+
+;; -- 🗎pdflatex on the CV --
+
+(cd "~/Projects/Work_Portfolio/ResumeCV")
+(shell-command "pdflatex t_BAresume.tex")
+
+(shell-command "pdflatex DHBizUser_resume.tex")
+
+(pwd) "Directory /home/chuggboarder/Projects/Work_Portfolio/ResumeCV/"
+
+(browse-url "file:///home/chuggboarder/Projects/Work_Portfolio/ResumeCV/DHBizUser_resume.pdf")
