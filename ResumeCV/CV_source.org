@@ -1,0 +1,174 @@
+
+#+TITLE: CV_source
+#+AUTHOR: David Harris
+#+EMAIL: davidh804@gmail.com
+#+PHONE: +19197809146
+#+LOCALE: Richmond, VA
+#+LANGUAGE: en
+#+STARTUP: align hidestars lognotestate
+
+
+
+HEADLINE
+Supply Chain Analyst
+
+
+
+Timely Intelligence for Actionable Decisions
+
+
+
+- Extract
+
+- Transform
+
+- Load
+
+- Transact
+
+- Process
+
+- Document
+
+- Analyze
+
+- Summarize
+
+- Communicate
+
+
+
+Procurement · Leadership · Manufacturing
+
+Business Analytics · Technical Service
+
+Customer & Vendor Relations · Data Handling
+
+
+
+Excel · Power Query · Office Suite
+
+SAP · Syspro · AS400 · DAX
+
+Structured Query Language · Git · LATEX
+
+
+
+APICS Planning and Inventory Management course part 1 ··· Assoc. for Supply Chain Mgmt.
+
+Supervisor Management Training ··· Nan Ya Plastics Corp., America
+
+
+
+Projects & Examples
+
+https://github.com/DHBizUser/Work_Portfolio
+
+
+
+EXPERIENCE
+
+
+
+Supply Chain Analyst
+
+Fareva Richmond, Inc. · Richmond, VA
+
+Apr 2023 - present
+
+- Maintained analysis pipelines and inventory reports
+
+- Contributed research and analytical support to cross functional continuous improvement studies
+
+- Communicated insights for KPI tracking and optimization
+
+- Provided timely ad-hoc reporting in response to stakeholder inquiry
+
+
+
+Buyer Planner II
+
+Fareva Richmond, Inc. · Richmond, VA
+
+Jun 2022 - Apr 2023
+
+- Managed >100 critical process inputs and associated supplier relationships
+
+
+Preco, Inc. · Somerset, WI
+
+Jan 2021 - Jun 2022
+
+- Maintained inventory flows for 1500+ materials
+
+- Managed Supplier Records and 200+ materials
+
+- Sourced materials for facility/maintenance and two major business segments
+
+- Worked full time remote from December 2021 on
+
+
+
+Supply Chain Manager
+
+Rockland Industries, Inc. · Baltimore, MD
+
+Aug 2016 - Mar 2020
+
+- Met with vendors and managed purchases for critical process inputs
+
+- Maintained availability reports and promotional categories for sales and marketing team
+
+- Managed bulk storage inventory flows to maintain supply continuity
+
+
+
+Account Manager
+
+Nan Ya Plastics Corporation, America · Lake City, SC
+
+Sep 2015 - Jul 2016
+
+- B2B outside sales accounts for PET resin, polyester fiber, and filament yarn plant
+
+
+
+Centralized Supplier Management Team Lead
+
+AT&T · Durham, NC
+
+Jun 2014 - Jun 2015
+
+- Managed trunked communications network outage updates
+
+- Coordinated between Access providers, Network Operations Centers, and customers
+
+
+
+EDUCATION
+
+
+
+B.S. Textile Technology
+
+North Carolina State University · Raleigh, NC
+
+2015
+
+- Concentration: Supply Chain Operations
+
+- Minor: Arts Entrepreneurship
+
+
+
+Publication
+
+Journal of Arts Entrepreneurship Education 2015
+
+The Aesthetic Value Exchange: A Potential Framework for the Arts Entrepreneurship Classroom
+
+https://digitalcommons.memphis.edu/jaee/vol1/iss1/2/
+
+
+
+https://www.linkedin.com/in/david-harris-4738a494

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A4 HTML Template</title>
+
+    <style>
+/* General body styling for screen preview */
+body {
+    margin: 0;
+    padding: 0;
+    background: #e0e0e0; /* Grey background for screen view */
+    font-family: Arial, sans-serif;
+}
+
+/* Page container styles for screen view */
+.page-container {
+    background: white;
+    width: 210mm; /* A4 width */
+    height: 297mm; /* A4 height */
+    margin: 10mm auto; /* Center page on screen with margin */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow for page effect */
+    box-sizing: border-box;
+    padding: 20mm; /* Inner padding for content */
+    overflow: hidden;
+}
+
+/* Print-specific styles */
+@media print {
+    body {
+        background: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .page-container {
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        page-break-after: always; /* Ensure each container is a separate page if needed */
+    }
+
+    /* Use the @page rule for precise print settings */
+    @page {
+        size: A4 portrait; /* Set page size and orientation for printing */
+        margin: 10mm; /* Set print margins */
+        /* You can also use specific page counter rules here if needed */
+    }
+    
+    /* Force page breaks where needed */
+    .page-break {
+        display: block;
+        page-break-before: always;
+    }
+}
+
+/* Header and Footer basic styling */
+header, footer {
+    text-align: center;
+    position: fixed; /* Position fixed relative to the page box in print media */
+    width: 100%;
+}
+
+footer {
+    bottom: 0;
+}
+
+      </style>
+    
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <h1>Document Title</h1>
+        </header>
+        <main>
+            <p>This is the main content of the A4 document. It should flow naturally across pages when printed.</p>
+            <!-- Add more content as needed -->
+            <div class="page-break"></div>
+            <p>This is the start of the second page.</p>
+        </main>
+        <footer>
+            <p>Page <span class="page-number"></span> of <span class="page-count"></span></p>
+        </footer>
+    </div>
+</body>
+</html>

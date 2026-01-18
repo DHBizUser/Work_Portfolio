@@ -59,7 +59,9 @@
 %\usepackage{fetamont}
 %\usepackage[default]{gillius}
 %\usepackage[light,math]{iwona}
-%\usepackage[thin]{roboto} 
+%\usepackage[thin]{roboto}
+\usepackage{attachfile}
+\usepackage{hyperref}
 
 % set font default
 \renewcommand*\familydefault{\sfdefault} 	
@@ -283,7 +285,7 @@
 
 \textcolor{softcol}{\hrule}
 \vspace{-2pt}
-\hspace{14.3cm}
+\hspace{13.5cm}
 #4 \\[-18pt-6pt]
 \vspace{6pt}
 	\begin{tabular*}{1\textwidth}{l}
@@ -519,9 +521,9 @@
 	\vspace{-45pt}
 
   	\hspace{98pt}
-	\parbox[c]{2cm}{\textbf{Extract \\ Transform \\  Load } } \hspace{101.5pt}
-	\parbox[c]{2cm}{\textbf{Analyze \\ Summarize \\ Communicate}}  \hspace{107pt}
-	\parbox[c]{3cm}{\textbf{Transact \\ Process \\ Document}}
+	\parbox[c]{2cm}{\textbf{ETL \\ SQL } } \hspace{101.5pt}
+	\parbox[c]{2cm}{\textbf{Spreadsheet \\ ERP client}}  \hspace{107pt}
+	\parbox[c]{3cm}{\textbf{Administrative \\ Transactional}}
 \end{minipage}
 \end{center}
 \end{minipage} \\[4pt]
@@ -581,7 +583,7 @@ Supervisor Management Training \hspace{3pt} &$\cdot$$\cdot$$\cdot$& \textit{Nan 
 \parbox[c]{0.8\linewidth}{
 %
   \cvevent{Apr 2023 - present}{Supply Chain Analyst}{Fareva Richmond, Inc.  $\cdot$  Richmond, VA}
-   {\hspace{22.2222pt}\includegraphics[height=18pt]{img/DBgraphic} \hspace{2pt} \includegraphics[height=18pt]{img/chartgraphic}}
+   {\hspace{12.2222pt} \includegraphics[height=18pt]{img/DBgraphic} \hspace{0.5pt} \includegraphics[height=18pt]{img/chartgraphic} \hspace{1pt} \includegraphics[height=18pt]{img/notebookgraphic}}
 {Maintained analysis pipelines and inventory reports}
 \threeextra{Contributed research and analytical support to cross functional continuous improvement studies}{Communicated insights for KPI tracking and optimization}{Provided timely ad-hoc reporting in response to stakeholder inquiry}
 
@@ -667,8 +669,8 @@ Supervisor Management Training \hspace{3pt} &$\cdot$$\cdot$$\cdot$& \textit{Nan 
 
 %\textcolor{softcol}{\hrule}
 
-%
-\cveventnographic{2015}{Publication}{Journal of Arts Entrepreneurship Education}{The Aesthetic Value Exchange: A Potential Framework for the Arts Entrepreneurship Classroom}{\href{https://digitalcommons.memphis.edu/jaee/vol1/iss1/2/}{https://digitalcommons.memphis.edu/jaee/vol1/iss1/2/}}
+%% %
+%% \cveventnographic{2015}{Publication}{Journal of Arts Entrepreneurship Education}{The Aesthetic Value Exchange: A Potential Framework for the Arts Entrepreneurship Classroom}{\href{https://digitalcommons.memphis.edu/jaee/vol1/iss1/2/}{https://digitalcommons.memphis.edu/jaee/vol1/iss1/2/}}
 
 
 
@@ -698,13 +700,13 @@ Supervisor Management Training \hspace{3pt} &$\cdot$$\cdot$$\cdot$& \textit{Nan 
 % FOOTER
 %--------------------------------------------------------------------------------------------------
 
-\begin{minipage}[c][0.01\textheight][t]{\linewidth}
+\begin{minipage}[c][0.015\textheight][t]{\linewidth}
 \vspace{-16pt}
 \begin{center}
 \parbox[b]{0.75\linewidth}{
 	\begin{center}
-          %
-	  \small{\faIcon[regular]{linkedin}  \href{https://www.linkedin.com/in/david-harris-4738a494}{https://www.linkedin.com/in/david-harris-4738a494}}
+          \textattachfile{recruiter-template.txt}{plain-text-CV} \\
+	  \small{\faIcon[regular]{linkedin}  \href{https://www.linkedin.com/in/david-harris-analysis}{david-harris-analysis}}
 %	\textcolor{white}{$\cdot$} \textcolor{white}{twitter.com/kuester\_jan}
 	\end{center}
 }
@@ -723,3 +725,7 @@ Supervisor Management Training \hspace{3pt} &$\cdot$$\cdot$$\cdot$& \textit{Nan 
 %
 %============================================================================%
 \end{document}
+
+%% Local Variables:
+%% compile-command: (concat "pdflatex " (buffer-file-name))
+%% End:
